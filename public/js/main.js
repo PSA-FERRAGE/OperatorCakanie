@@ -330,7 +330,6 @@ $(document).ready(function () {
     }
 
     function createOknoChart(oknoData, oknoDiv) {
-        console.log(oknoData);
         let canvas = oknoDiv.find('canvas');
 
         let tempData = {
