@@ -1,0 +1,25 @@
+doctrine:
+    orm:
+        default_entity_manager: fer
+        auto_generate_proxy_classes: '%kernel.debug%'
+        entity_managers:
+            sapia:
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                connection: sapia
+                mappings:
+                    Sapia:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/Entity/Sapia'
+                        prefix: 'App\Entity\Sapia'
+                        alias: Sapia
+            fer:
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                connection: fer
+                mappings:
+                    Fer:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/Entity/Fer'
+                        prefix: 'App\Entity\Fer'
+                        alias: Fer

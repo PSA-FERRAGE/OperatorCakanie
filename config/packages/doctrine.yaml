@@ -7,24 +7,20 @@ parameters:
 
 doctrine:
     dbal:
-        # configure these for your database server
-        driver: 'pdo_mysql'
-        server_version: '5.7'
-        charset: utf8mb4
-        default_table_options:
-            charset: utf8mb4
-            collate: utf8mb4_unicode_ci
+        default_connection: fer
+        connections:
+            sapia:
+                driver: 'oci8'
+                server_version: '11.2'
+                charset: al32utf8
+                url: '%env(resolve:DATABASE_SAPIA_URL)%'
 
-        # With Symfony 3.3, remove the `resolve:` prefix
-        url: '%env(resolve:DATABASE_URL)%'
-    orm:
-        auto_generate_proxy_classes: '%kernel.debug%'
-        naming_strategy: doctrine.orm.naming_strategy.underscore
-        auto_mapping: true
-        mappings:
-            App:
-                is_bundle: false
-                type: annotation
-                dir: '%kernel.project_dir%/src/Entity'
-                prefix: 'App\Entity'
-                alias: App
+            fer:
+                driver: 'sqlsrv'
+                user: 'fer_ro'
+                password: 'trnava12'
+                dbname: 'fer_operatori'
+                url: '%env(resolve:DATABASE_SQLSRV_URL)%'
+
+        types:
+            mydatetime: App\Type\MyDateTimeType

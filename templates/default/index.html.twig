@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" target="_blank" href="http://portail.inetpsa.com/Pages/sk-SK/gphome.aspx">
+            <img alt="Brand" src="{{ asset('img/psa_logo_white.svg') }}" style="max-height: 30px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="form-inline">
+                <div class="dropdown mr-2 mb-m-1">
+                    <button id="linkaSelectBtn" class="btn btn-outline-light dropdown-toggle" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-industry mr-1"></i><span id="linkaBtnText">{{ linky|first.nazov }}</span>
+                    </button>
+                    <div class="dropdown-menu linkaMenu" aria-labelledby="dropdownMenuButton">
+                        <a class="linkaSelectItem dropdown-item active"
+                           data-id="{{ linky|first.id }}">{{ linky|first.nazov }}</a>
+                        {% for linka in linky|slice(1, linky|length) %}
+                            <a class="linkaSelectItem dropdown-item" data-id="{{ linka.id }}">{{ linka.nazov }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="mr-2 mb-m-1">
+                    <input id="zmenaTgl" type="checkbox" name="stvorzmenka"
+                           data-toggle="toggle" data-on="<i class='fa fa-clock mr-1'></i>Štvorzmenka"
+                           data-off="<i class='fa fa-clock mr-1'></i>Trojzmenka"
+                           data-onstyle="warning" data-offstyle="info"
+                    >
+                </div>
+                <div class="input-group mr-2">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-light zmenaBtn" type="button">R</button>
+                    </div>
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-light zmenaBtn" type="button">P</button>
+                    </div>
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-light zmenaBtn" type="button">N</button>
+                    </div>
+                    <input id="datePicker" class="form-control text-center" name="datum" type="text"
+                           placeholder="Dátum" autocomplete="off" readonly>
+                    <div class="input-group-append">
+                        <button id="clearDate" class="btn btn-outline-light" type="button"><i
+                                    class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <button id="analyseBtn" class="btn btn-success mr-5" disabled><i class="fas fa-search"></i> Analyzovať
+                </button>
+            </div>
+
+            <button id="printBtn" class="btn btn-warning ml-auto mr-2" disabled><i class="fas fa-print"></i>
+                Tlačiť
+            </button>
+            <span id="version" class="navbar-text">v1.1</span>
+        </div>
+        </div>
+    </nav>
+
+    <div id="preloader" style="display: none;">
+        <div class="loader">
+            <div class="inner one"></div>
+            <div class="inner two"></div>
+            <div class="inner three"></div>
+        </div>
+    </div>
+
+    <main role="main" class="container-fluid">
+
+    </main>
+{% endblock %}

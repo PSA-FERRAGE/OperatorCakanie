@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Cakanie APF</title>
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}" />
+
+        <link type="text/css" rel="stylesheet" href="{{ asset('vendor/css/fontawesome-all.min.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('vendor/css/bootstrap.min.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('vendor/css/bootstrap-toggle.min.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('vendor/css/daterangepicker.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('vendor/css/preloader.css') }}">
+
+        <link type="text/css" rel="stylesheet" href="{{ asset('css/global.css') }}">
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+        <script type="text/javascript" src="{{ asset('vendor/js/jquery-3.3.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/js/moment.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/js/bootstrap-toggle.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/js/daterangepicker.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/js/Chart.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/js/chartjs-plugin-datalabels.min.js') }}"></script>
+
+        <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
     </body>
 </html>
