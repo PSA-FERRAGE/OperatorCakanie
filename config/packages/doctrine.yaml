@@ -17,6 +17,7 @@ doctrine:
 
             fer:
                 driver: 'sqlsrv'
+                charset: utf-8
                 user: 'fer_ro'
                 password: 'trnava12'
                 dbname: 'fer_operatori'

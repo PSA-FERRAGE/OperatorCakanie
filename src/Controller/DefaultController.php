@@ -5,10 +5,10 @@ namespace App\Controller;
 use App\Entity\Fer\Linka;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
+class DefaultController extends AbstractController
 {
     /**
      * @Route(path="/", name="index_action")

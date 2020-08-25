@@ -4,7 +4,7 @@ doctrine:
         auto_generate_proxy_classes: '%kernel.debug%'
         entity_managers:
             sapia:
-                naming_strategy: doctrine.orm.naming_strategy.underscore
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
                 connection: sapia
                 mappings:
                     Sapia:
@@ -14,7 +14,7 @@ doctrine:
                         prefix: 'App\Entity\Sapia'
                         alias: Sapia
             fer:
-                naming_strategy: doctrine.orm.naming_strategy.underscore
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
                 connection: fer
                 mappings:
                     Fer:
